@@ -5,8 +5,10 @@ let card=-1
 let milli =1000
 let sons=[ ]
 let images=[ ]
-let visibles=[ false,false,false,false,false,false,false,false,false,false,false,false]
+let visibles=[ 
+ false,false,false,false,false,false,false,false,false,false,false,false]
 let shuffled=[1,2,3,4,5,6,7,8,9,10,11,12 ]
+let bg
 function preload(){ 
  
   
@@ -37,14 +39,14 @@ function playSound(num){
 
 function setup(){
 
+bg=loadImage("imagens/fundo.png")
 
 
-
-  createCanvas(400, 400);
+  createCanvas(600, 400);
 }
 
 function draw() {
-  background(220);
+  background(bg);
   
  for (let i=0;i<shuffled.length;i++){
   
@@ -121,11 +123,12 @@ if(card1 != card2 && !visibles[i]){
 }
   
 function positionX(position){   
-  return margin+position*(cardWidth+margin)
+  return margin+90
+  +position*(cardWidth+margin)
           
    }
 function positionY(position){
-  return margin+position*(cardHeight+margin)
+  return margin+45+position*(cardHeight+margin)
   }
 function sleep(millisecondsDuration)
 {
